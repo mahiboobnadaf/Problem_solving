@@ -22,3 +22,9 @@ function foo(){
 
 }
 foo()
+
+var a=2;
+var a=9;
+console.log(a)
+var a;
+console.log(a)
