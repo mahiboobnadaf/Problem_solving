@@ -1,4 +1,9 @@
-var z = 5
+console.log(z) // hoising  accessing before initialization
+ z = 50
+ console.log(z)
+ var z;
+
+ 
 function foo(){
     var x = 1;
 
