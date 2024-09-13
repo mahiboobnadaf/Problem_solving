@@ -8,25 +8,3 @@ const calculateArea =  function(radius){
     return result
 }
 console.log(calculateArea(radius))
-
-
-
-const calculateCircumference= function(radius){
-    const result2 = []
-    for (let i=0;i<radius.length;i++){
-        result2.push(2 * Math.PI * radius[i])
-    }
-    return result2
-}
-
-console.log(calculateCircumference(radius))
-
-
-const calculateDiameter = function(radius){
-    const result3 = []
-    for(let i=0 ; i<radius.length;i++){
-        result3.push(2 * radius[i])
-    }
-    return result3
-}
- console.log(calculateDiameter(radius))
