@@ -36,3 +36,5 @@ let sum2 = (a, b) => {  // the curly brace opens a multiline function
   };
   
   console.log( sum2(1, 2) ); // 3
+
+  
