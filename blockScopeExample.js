@@ -29,6 +29,9 @@ const z = 30;
     var y = 200;
     console.log(y)          // prints 200; coz of the y value is 200 in lexical environment
 
+    let y = 20000;
+    console.log(y)              // prints 20000; coz it is legal shadowing var y is in global scope and let y is in block scope
+
     const z = 300;
     console.log(z);         // prints 300;  coz , same as let variable  // It is also called shadowing the outer variable
 }
@@ -38,3 +41,18 @@ console.log(x);             // prints 10 ; coz this x is in script scope
 console.log(y);  // prints 200; coz y is in global scope & any changes scope other than function scope, will reflects in global value
 
 console.log(z)              // prints 30; coz z is in script scope
+
+
+// ------------------------------------------- //
+console.log("// ------------------------------------ //")
+
+
+var n = 50;
+
+function m(){
+    var n = 500;
+    console.log(n);         // prints 500; coz it is in function scope
+}
+m();
+
+console.log(n)          // prints 50; coz it is global scope & any changes made in funciton scope does not change value in global scope
