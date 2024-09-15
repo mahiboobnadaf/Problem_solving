@@ -9,5 +9,5 @@
     console.log(c)
 }
 console.log(a)
-// console.log(b)
-// console.log(c)
+// console.log(b)           // Reference error: b is not defined
+console.log(c)       
