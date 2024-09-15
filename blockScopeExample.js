@@ -24,13 +24,13 @@ const z = 30;
 {
     // var x = 100;          //error: Identifier 'x' has already been defined         // It is called illegal shadowiing
     let x = 100;                 
-    console.log(x);          // prints 100; coz it is in Block scope     // It is also called shadowing
+    console.log(x);          // prints 100; coz it is in Block scope     // It is also called shadowing the outer variable
 
     var y = 200;
     console.log(y)          // prints 200; coz of the y value is 200 in lexical environment
 
     const z = 300;
-    console.log(z);         // prints 300;  coz , same as let variable  // It is also called shadowing 
+    console.log(z);         // prints 300;  coz , same as let variable  // It is also called shadowing the outer variable
 }
 
 console.log(x);             // prints 10 ; coz this x is in script scope  
