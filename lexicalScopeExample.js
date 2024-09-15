@@ -19,7 +19,9 @@ function x(){
     function y(){
         console.log(b)
     }
-    y();
-    console.log(b)
+    // return y;
+    y()
 }
-x();
+// let z = x();
+// console.log(z)
+// z()
