@@ -22,12 +22,12 @@ function a(){
         let b = 10;
 
         function y(){
-            console.log(b,c)
+            console.log(b,c)            // 1200, 200
         }
 
         b = 1200;
         y();
-        
+
     }
     x()    
 }
