@@ -51,6 +51,6 @@ x()
 
 //It works perfectly with help of closure
 // here we took a new function to store setTimeout in it and to pass values through function
-// so when loop iterates evrytime , the closure passes the value of i to the funciton , 
+// so when loop iterates evrytime , the closure passes the value of i to the funciton , i.e new copy of i
 // we know here cosure was formed so it remembers the lexical environment of it
 // then after every delay it prints numbers accordingly
