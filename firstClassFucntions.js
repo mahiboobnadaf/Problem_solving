@@ -4,7 +4,7 @@
     // and can be returned from the functions is called First class Fucntions.
 
 // Example
-fuction a(param1){
+function a(param1){
     console.log(param1);
 }
 a(function (){ });
@@ -16,4 +16,6 @@ function b(){
         console.log("returned by xyz")
     }
 }
-console.log(b())
+let c= b()
+console.log(c);
+c();
