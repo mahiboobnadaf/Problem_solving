@@ -3,3 +3,15 @@
     // Is known as Higher order function
 
 // Example
+
+const greet = function(name){
+    return function xyz(msg){
+        console.log(`Hi !! ${name} , ${msg}`);       
+    }
+}
+const greet_msg = greet("Mahiboob");
+greet_msg("Welcome Home")
+
+// Or we can Call shortcut as
+
+greet("Rasool")("Welcome Home");
