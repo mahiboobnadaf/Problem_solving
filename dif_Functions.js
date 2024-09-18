@@ -30,3 +30,9 @@ var d= function xyz(){
     console.log("d is called");
 }
 d();
+
+// Arrow Fucntions
+
+let sayHi = () => console.log("Hi , Hello");
+
+sayHi();
