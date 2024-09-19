@@ -19,7 +19,7 @@ while(true){
 
 console.log("---short cut while loop---")
 
-let pos2 = -1
+let pos2 = 0
 while((pos2 = str.indexOf(target,pos2 +1) )!= -1){
     console.log(pos2)
 }
@@ -31,4 +31,12 @@ for(let i=0;i<=str.length;i++){
     if(p == -1) break;
     console.log(p)
     i=p+1
+}
+
+
+console.log("---lastIndexOf()---")
+
+let pos3 = str.length
+while((pos3 = str.lastIndexOf(target,pos3 -1) )!= -1){
+    console.log(pos3)
 }
