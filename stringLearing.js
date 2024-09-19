@@ -28,10 +28,3 @@ for(let char of str1){
 console.log('----------------')
 // Strings are immutable in Js , we cannot change a character
 
-let str2 = "Hello" 
-str2[0] = 'h'
-console.log(str2)       // Not changed
-
-let str3 = "Hello"
-str3 =  str3[4] + 'h' 
-console.log(str3)
