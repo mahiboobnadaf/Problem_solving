@@ -12,3 +12,26 @@ console.log(str.indexOf("b",5))     // 7 is returned , coz it started searching 
 console.log(str.indexOf("nadaf"))  // -1 , coz it is case sensitive so it did not found the match
 
 console.log(str.indexOf("Baga"))    // 15
+
+//2. str.lastIndexOf(substr, pos) ->pos , rturns position , starts from last of str
+
+console.log(str.lastIndexOf("nadaf"))
+
+//3. str.includes(substr, pos) ->pos , it returns true or false
+
+console.log(str.includes("B"))
+
+console.log(str.includes("Bob"))
+
+//4. str.startsWith(substr, pos)  ->pos , it returns true or false
+
+console.log(str.startsWith("M"))
+
+console.log(str.startsWith("N"))
+
+//5. str.endsWith(substr, pos)  ->pos , it returns true or false
+
+console.log(str.endsWith("t"))
+
+console.log(str.endsWith("T"))
+
