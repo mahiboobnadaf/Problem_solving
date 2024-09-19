@@ -24,7 +24,11 @@ console.log(arr2.length)    // prints length of the array
 
 console.log(arr2[-1])    // undefined coz , array does not support negative indexing
 
-console.log(arr2[arr2.length -1])   // we can get last index with help of arr.length-1
+console.log(arr2[arr2.length -1])   // we can get last index with help of arr.length-1 
+
+//or we can use arr.at(-1)
+
+console.log(arr2.at(-1))        // prints last element in array
 
 // array can store heterogenius elements
 let arr = [ 'Apple', { name: 'John' }, true, function() { console.log('hello'); } ];
