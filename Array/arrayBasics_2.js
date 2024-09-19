@@ -16,13 +16,29 @@
 
 // In computer science, the data structure that allows this, is called deque.
 
-// Pop
+// Pop()
 
 let arr = ["Apple", "banana", "Mango"];
 arr.pop();              // removes last element
 console.log(arr);       //prints only ['Apple','banana']
 
-// Push
+// Push()
 
 arr.push("Dates");      // add 'Dates' at end of array
 console.log(arr)        // prints ['Apple','banana','Dates']
+
+// Shift()
+
+arr.shift();            // Removes first element from the arrat
+console.log(arr)        // prints ['banana','Dates']
+
+// Unshift()
+
+arr.unshift("Apple");    // Add the element add beginning
+console.log(arr)         // prints ['Apple','banana','Dates']
+
+// Methods push() and unshift() can add multiple elements at once
+arr.push("Orange", "Peach");
+arr.unshift("Pineapple", "Lemon");
+
+console.log(arr);       // prints: [ 'Pineapple', 'Lemon', 'Apple', 'banana', 'Dates', 'Orange', 'Peach' ]
