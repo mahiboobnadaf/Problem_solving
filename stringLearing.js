@@ -46,3 +46,12 @@ console.log('-----Changing case-----')
 console.log(str2.toLowerCase())
 
 console.log(str2.toUpperCase())
+
+console.log(str2[3].toUpperCase())
+
+console.log(str2) // original value is not changed 
+
+                // it is immutable , instead it creates a copy of str
+
+
+
