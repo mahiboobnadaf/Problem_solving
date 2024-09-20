@@ -46,7 +46,8 @@ arr4.length = 4
 console.log(arr4.length)        //4 
 
 
-// Matrics
+// Multi-dimensional array 
+// example Matrics
 let arr5 = [
     [1,2,3],
     [4,5,6],
