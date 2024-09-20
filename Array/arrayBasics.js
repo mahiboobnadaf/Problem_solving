@@ -36,3 +36,23 @@ let arr = [ 'Apple', { name: 'John' }, true, function() { console.log('hello'); 
 console.log(arr[1].name)    // prints name which is in object at index 1 of the array
 
 arr[3]();           // call the function which is at index 3 prints hello
+
+
+// Array using constructor
+let arr4 = new Array(2);
+console.log(arr4.length);       //2
+console.log(arr4[1]);           //undefined
+arr4.length = 4
+console.log(arr4.length)        //4 
+
+
+// Matrics
+let arr5 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+console.log(arr5[0][2]);        //3
+console.log(arr5[2][0]);        //7
+
