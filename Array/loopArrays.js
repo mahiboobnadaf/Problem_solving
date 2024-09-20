@@ -12,6 +12,6 @@ for(let elem of arr){
 
 console.log("-------------")
 
-for(let elem in arr){
-    console.log(arr[elem])
+for(let key in arr){
+    console.log(arr[key])
 }
