@@ -56,3 +56,5 @@ console.log([1,2,3,4].slice(-1,-3)) // [] empty
 console.log([1,2,3,4].slice(0,-2)) // [1,2] 
 
 console.log([1,2,3,4].slice(0)) // [1,2,3,4]
+
+console.log([1,2,3,4].slice(-3)) // [2,3,4]
