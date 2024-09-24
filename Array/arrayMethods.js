@@ -16,6 +16,7 @@ console.log(arr.length);    //but length is still 3
 // The arr.splice method is a Swiss army knife for arrays. It can do everything: insert, remove and replace elements.
 
 // arr.splice(start[, deleteCount, elem1, ..., elemN])
+console.log("----array splice method----")
 
 let arr2 = ['apple', 'mango', 'banana', 'pear', 'Orange', 'dragon' ];
 arr2.splice(1,2);       // from index 1, remove 2 elements
@@ -41,3 +42,17 @@ arr3.splice(-1,0,3,4)   // from index -1 (one step from the end)
                         // then insert 3 and 4
 console.log(arr3);
 
+console.log("----array slice method----")
+
+// arr.slice([start], [end])
+// It returns a new array copying to it all items from index start to end (not including end). 
+// Both start and end can be negative, in that case position from array end is assumed.
+// It’s similar to a string method str.slice, but instead of substrings, it makes subarrays.
+
+console.log([1,2,3,4].slice(1,3))   //[2,3] not including end index(3rd index)
+
+console.log([1,2,3,4].slice(-1,-3)) // [] empty
+
+console.log([1,2,3,4].slice(0,-2)) // [1,2] 
+
+console.log([1,2,3,4].slice(0)) // [1,2,3,4]
