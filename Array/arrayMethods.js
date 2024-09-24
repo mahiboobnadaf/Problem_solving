@@ -58,3 +58,17 @@ console.log([1,2,3,4].slice(0,-2)) // [1,2]
 console.log([1,2,3,4].slice(0)) // [1,2,3,4]
 
 console.log([1,2,3,4].slice(-3)) // [2,3,4]
+
+console.log("----array concat method----")
+
+//The method arr.concat creates a new array that includes values from other arrays and additional items.
+
+// arr.concat(arg1, arg2...)
+
+let arr4 = [1,2];
+
+console.log(arr4.concat([3,4])) //[1,2,3,4]
+
+console.log(arr4.concat([4,5])) //[1,2,4,5]
+
+console.log(arr4.concat([3,4],[5,6],7,8)) // [1,2,3,4,5,6,7,8]
