@@ -1,3 +1,4 @@
+const prompt = require('prompt-sync')(); 
 let que_ans = [
     {
     question : "What is your Year of Birth ?",
@@ -30,5 +31,15 @@ let que_ans = [
                 {option : "Savadatti",content : false},
                 {option : "Bangalore",content : false},
     ]
-},
+}
 ]
+
+// console.log(que_ans[0].question)
+// let item= que_ans[0].answer.find(ans => ans.content == true)
+// console.log(item.option)
+
+for(let elem of que_ans){
+    console.log(elem.question)
+    elem.answer.forEach((item,index) => console.log(`${index+1}. ${item.option}`) )
+    console.log("-")
+}
