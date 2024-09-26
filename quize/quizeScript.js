@@ -37,7 +37,10 @@ let que_ans = [
 // console.log(que_ans[0].question)
 // let item= que_ans[0].answer.find(ans => ans.content == true)
 // console.log(item.option)
+
 let userInput=[];
+let correctAns = [];
+let score =0;
 
 for(let elem of que_ans){
     console.log(elem.question)
@@ -51,6 +54,16 @@ for(let elem of que_ans){
         console.log("wrong input : Terminated") 
         break
     }
+
 }
 
-console.log(userInput)
+// console.log(userInput)
+
+for(i=0;i<que_ans.length;i++){
+    correctAns.push(que_ans[i].answer.findIndex(ans => ans.content == true)+1)
+    if(userInput[i] == correctAns[i]){
+        // console.log(correctAns)
+        score +=1;
+    }
+}
+console.log(`Your score is ${score} out of 4`)
