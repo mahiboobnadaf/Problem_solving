@@ -37,9 +37,20 @@ let que_ans = [
 // console.log(que_ans[0].question)
 // let item= que_ans[0].answer.find(ans => ans.content == true)
 // console.log(item.option)
+let userInput=[];
 
 for(let elem of que_ans){
     console.log(elem.question)
     elem.answer.forEach((item,index) => console.log(`${index+1}. ${item.option}`) )
-    console.log("-")
+    let inp;
+    inp = prompt("Enter your option Number : ")
+    if(inp >=1 && inp <=4 ){
+        userInput.push(inp)  
+    }
+    else{
+        console.log("wrong input : Terminated") 
+        break
+    }
 }
+
+console.log(userInput)
