@@ -22,5 +22,31 @@ let someUsers = users.filter((item,index,array) => {
     console.log(index,array) 
     return item.id<3
 })
-console.log(someUsersgi)
+console.log(someUsers)
 console.log(someUsers.length)
+
+//example2
+const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter((word,index) =>{
+    return word.length > 6 
+} )
+
+
+console.log(result);
+
+result[0]="Mahiboob"
+
+console.log(result , words)
+
+// Example 3
+
+function isBigEnough(value) {
+    return value >= 10;
+  }
+  
+const filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
+console.log(filtered)
+//OR
+const filtered2 = [12,5,8,130,44].filter(item=>item>=10)
+console.log(filtered2)
