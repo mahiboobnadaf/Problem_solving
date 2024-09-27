@@ -22,5 +22,5 @@ let someUsers = users.filter((item,index,array) => {
     console.log(index,array) 
     return item.id<3
 })
-console.log(someUsers)
+console.log(someUsersgi)
 console.log(someUsers.length)
