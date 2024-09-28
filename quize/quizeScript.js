@@ -8,6 +8,7 @@ let que_ans = [
                 {option : "1998",content : false},
     ]
 },
+
 {
     question : "What is your College Name ?",
     answer : [  {option : "Jain",content : false},
@@ -33,7 +34,16 @@ let que_ans = [
     ]
 }
 ]
-
+let questions =[
+    {
+    question : "What is your Year of Birth ?",
+    a:2000,
+    b:1998,
+    c:2001,
+    d:1990,
+    ans:2000 
+},
+]
 // console.log(que_ans[0].question)
 // let item= que_ans[0].answer.find(ans => ans.content == true)
 // console.log(item.option)
