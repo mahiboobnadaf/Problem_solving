@@ -8,7 +8,7 @@ console.log(arr);  // [1,10,18,2,21]
 // console.log(arr2);  // [ '&', 29, 'Holiday', 'Sunny', 'a', 'day', "it's" ]
 
 
-console.log(arr.sort((a,b)=>{
+console.log([10,12,4,2,50,1].sort((a,b)=>{
     console.log(`a:${a},b:${b}`)
     return a-b;
 }))
