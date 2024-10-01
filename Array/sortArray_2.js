@@ -1,4 +1,4 @@
-let arr = [90, 1, 20, 14, 3, 55];
+let arr = [60, 1, 20, 14, 3, 55, 1, 80,100, 2, 200];
 var sortRes = [];
 var copy = arr.slice();		//create duplicate array
 var inc = 0;	//inc meant increment
