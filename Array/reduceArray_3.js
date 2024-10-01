@@ -21,3 +21,19 @@ const ouput = users.reduce((acc,curr)=>{
 },{})
 
 console.log(ouput)
+
+// Prints the only firstanmes of users who has age above 24
+// we can chain the methods
+
+const output2 = users.filter(x=> x.age > 24).map(x=>x.firstName)
+console.log(output2)
+
+// or we can use reduce methods for the above question
+
+const output3 = users.reduce((acc,curr)=>{
+    if(curr.age > 24){
+        acc.push(curr.firstName)
+    }
+    return acc
+},[])
+console.log(output3)
