@@ -6,22 +6,33 @@
 
 .center{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
+}
+
+.heading{
+    font-size: 80px;
 }
 
 .flexColumn {
     flex-direction: column;
     justify-content:center ;
 }
-/* 
+
 .flexRow {
-    flex-direction: row;
-    align-items: center;
-} */
+    flex-direction: row 2;
+    gap:20px;
+}
 
 button{
-    width: 80px;
+    width: 100px;
+    height: 40px;
+    font-size: medium;
+    font-style: oblique;
+    position: relative;
+    top: 50%;
+    color:rgb(211, 213, 215);
+    background-color:#0a0a23;;
+
 }
 
 .btnGap{
@@ -37,11 +48,12 @@ button{
     background-color:cadetblue;
     color:black;
     height:100vh ;
-
 }
 
 #questionBox{
     color:blue;
     border: 2px solid;
     justify-content: center;
+    font-size: larger;
+    width: 50%;
 }
