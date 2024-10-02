@@ -58,6 +58,7 @@ button{
     font-size: larger;
     width: 50%;
     padding: 15px;
+    overflow:auto;
 }
 
 #backBtn{
