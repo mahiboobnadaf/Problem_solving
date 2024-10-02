@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <div class = "container"> 
-    <h1 class="center"> Quize Game </h1>
+    <div class = "container gap"> 
+        <h1 class="center"> Quize Game </h1>
 
         
         <div id = "quetionBox" class = "center">
@@ -16,13 +16,36 @@
         </div>
 
         <div id="options" class = "center flexColumn">
-            <div id = "option1">  <p>option 1</p>  </div>
-            <div id = "option2">  <p>option 1</p>  </div>
-            <div id = "option3">  <p>option 1</p>  </div>
-            <div id = "option4">  <p>option 1</p>  </div>
+            <form name="quizeform">
+                
+                <div id="option1"> 
+                    <input type="radio" name="Option1">
+                    <label> Option 1 </label> 
+                </div>
+
+                <div id="option2"> 
+                    <input type="radio" name="Option2">
+                    <label> Option 2 </label>  
+                </div>
+
+                <div id="option3">   
+                    <input type="radio" name="Option3">
+                    <label> Option 3 </label>   
+                </div>
+
+                <div id="option4"> 
+                    <input type="radio" name="Option4">
+                    <label> Option 4 </label>  
+                </div>
+
+            </form>                
         </div>
 
-        <div id = "nextBtn">  <p>Next</p>   </div>
+        <div id = "buttons" class="center flexRow"> 
+            <button id="backBtn" disabled="true"> Back </button>
+            <div class="btnGap"></div>
+            <button id="nextBtn"> Next </button>
+        </div>
         
         
     </div>
