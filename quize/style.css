@@ -34,9 +34,24 @@ button{
     position: relative;
     top: 50%;
     color:rgb(211, 213, 215);
-    background-color:#0a0a23;;
-
+    /* background-color:#0a0a23; */
+    
+    background-image: linear-gradient(to right, #082233 0%, #030204  51%, #0d517e  100%);
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 10px #eee;
+        border-radius: 100px;
+        display: block;
 }
+button:hover {
+    background-position: right left; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+ 
 
 .btnGap{
     justify-content: center;
@@ -48,28 +63,32 @@ button{
 }
 
 .container{
-    background-color:cadetblue;
-    color:black;
+    /* background-color:cadetblue; */
+    color:white;
     height:100vh ;
+    background: rgb(14,0,22);
+    background: linear-gradient(90deg, rgba(14,0,22,1) 6%, rgba(168,0,142,1) 100%);
 }
 
 #questionBox{
-    color:rgb(11, 11, 11);
+    color:whitesmoke;
     border: 2px solid rgb(206, 206, 219);
     justify-content: center;
     font-size: larger;
-    width: 50%;
+    width: 40%;
     padding: 15px;
     overflow-wrap: break-word;
 }
 
 #backBtn{
     right:80%;
+
     /* opacity: 50%; */
 }
 
 #nextBtn{
     left:80%;
+
 }
 
 .optionBox{

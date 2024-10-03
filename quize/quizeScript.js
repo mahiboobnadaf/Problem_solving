@@ -1,4 +1,4 @@
-const prompt = require('prompt-sync')(); 
+// const prompt = require('prompt-sync')(); 
 let que_ans = [
     {
     question : "What is your Year of Birth ?",
@@ -34,46 +34,62 @@ let que_ans = [
     ]
 }
 ]
-let questions =[
-    {
-    question : "What is your Year of Birth ?",
-    a:2000,
-    b:1998,
-    c:2001,
-    d:1990,
-    ans:2000 
-},
-]
-// console.log(que_ans[0].question)
-// let item= que_ans[0].answer.find(ans => ans.content == true)
-// console.log(item.option)
+let questionIndex = 0;
+
+let questionBox = document.getElementById("questionBox")
+// let questionText = questionBox.innerText
+questionBox.innerText = '';
+
+function displayQuestion(ind){
+    const currentQuestion = questionIndex+1 + '. ' + que_ans[questionIndex].question
+    questionBox.innerText = currentQuestion;
+    var radioInput;
+
+    que_ans[questionIndex].answer.forEach((item,i) => {
+        const label = document.getElementById(`label${i+1}`);
+        const radio = document.getElementById(`radio${i+1}`);
+        radio.checked = false;
+        radio.onclick = () => {
+            // console.log(radio.value)
+            checkResult(radio.value,questionIndex)
+        }
+        label.innerText=item.option;
+        radio.value = item.option;
+    } )
+    // console.log(radioInput + '*')
+}
+
+function checkResult(btnInput,questionIdx){
+    console.log(btnInput,questionIdx)
+}
+
+
+window.onload = displayQuestion(questionIndex)
+
+
+        
+    
+    // inp = prompt("Enter your option Number : ")
+    // if(inp >=1 && inp <=4 ){
+    //     userInput.push(inp)  
+    // }
+    // else{
+    //     console.log("wrong input : Terminated") 
+    //     break
+    // }
+
 
 let userInput=[];
 let correctAns = [];
 let score =0;
 
-for(let elem of que_ans){
-    console.log(elem.question)
-    elem.answer.forEach((item,index) => console.log(`${index+1}. ${item.option}`) )
-    let inp;
-    inp = prompt("Enter your option Number : ")
-    if(inp >=1 && inp <=4 ){
-        userInput.push(inp)  
-    }
-    else{
-        console.log("wrong input : Terminated") 
-        break
-    }
+// // console.log(userInput)
 
-}
-
-// console.log(userInput)
-
-for(i=0;i<que_ans.length;i++){
-    correctAns.push(que_ans[i].answer.findIndex(ans => ans.content == true)+1)
-    if(userInput[i] == correctAns[i]){
-        // console.log(correctAns)
-        score +=1;
-    }
-}
-console.log(`Your score is ${score} out of 4`)
+// for(i=0;i<que_ans.length;i++){
+//     correctAns.push(que_ans[i].answer.findIndex(ans => ans.content == true)+1)
+//     if(userInput[i] == correctAns[i]){
+//         // console.log(correctAns)
+//         score +=1;
+//     }
+// }
+// console.log(`Your score is ${score} out of 4`)
