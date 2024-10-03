@@ -11,6 +11,8 @@
 
 .heading{
     font-size: 80px;
+    padding:50px;
+
 }
 
 .flexColumn {
@@ -58,7 +60,7 @@ button{
     font-size: larger;
     width: 50%;
     padding: 15px;
-    overflow:auto;
+    overflow-wrap: break-word;
 }
 
 #backBtn{
@@ -72,4 +74,5 @@ button{
 
 .optionBox{
     display: flex;
+    font-size: larger;
 }
