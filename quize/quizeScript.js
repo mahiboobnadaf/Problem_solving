@@ -52,11 +52,13 @@ function displayQuestion(ind){
 
 function checkResult(btnInput,questionIdx){
     let score = 0;
+    gotAnswer = {[btnInput] : questionIdx}
     actualAnswer = questions[questionIdx].answer
     if(btnInput == actualAnswer){
         console.log(btnInput)
         score++;
     }
+    console.log(gotAnswer)
 }
 
 
