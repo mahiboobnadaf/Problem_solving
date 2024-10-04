@@ -45,10 +45,18 @@ function displayQuestion(ind){
         radio.value = item;
     })
     // console.log(radioInput + '*')
+    nextBtn.onclick=()=>{
+        loadNextQuestion()
+    }
 }
 
 function checkResult(btnInput,questionIdx){
-    console.log(btnInput,questionIdx)
+    let score = 0;
+    actualAnswer = questions[questionIdx].answer
+    if(btnInput == actualAnswer){
+        console.log(btnInput)
+        score++;
+    }
 }
 
 
