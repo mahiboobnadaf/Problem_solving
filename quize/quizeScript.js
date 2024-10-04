@@ -1,37 +1,25 @@
 // const prompt = require('prompt-sync')(); 
-let que_ans = [
+let questions =[
     {
     question : "What is your Year of Birth ?",
-    answer : [  {option : "2000",content : true},
-                {option : "1990",content : false},
-                {option : "1995",content : false},
-                {option : "1998",content : false},
-    ]
+    options: [2000,1998,2001,1990],
+    answer:2000 
 },
 
 {
     question : "What is your College Name ?",
-    answer : [  {option : "Jain",content : false},
-                {option : "KLE",content : false},
-                {option : "BVB",content : false},
-                {option : "GPT",content : true},
-    ]
+    options :["Jain", "BVB","KLE","Reva",],
+    answer: "BVB"
 },
 {
     question : "What is your Percentage ?",
-    answer : [  {option : "70",content : false},
-                {option : "90",content : false},
-                {option : "80",content : true},
-                {option : "95",content : false},
-    ]
+    options: [80,70,60,90,],
+    answer: 70
 },
 {
     question : "What is your Home Town ?",
-    answer : [  {option : "Hubli",content : true},
-                {option : "Bagalkot",content : false},
-                {option : "Savadatti",content : false},
-                {option : "Bangalore",content : false},
-    ]
+    options:["Hubli","Savdatti","Bagalkot","Hyderabad"],
+    answer: "Hyderabad"    
 }
 ]
 let questionIndex = 0;
@@ -41,21 +29,21 @@ let questionBox = document.getElementById("questionBox")
 questionBox.innerText = '';
 
 function displayQuestion(ind){
-    const currentQuestion = questionIndex+1 + '. ' + que_ans[questionIndex].question
+    const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
     questionBox.innerText = currentQuestion;
     var radioInput;
 
-    que_ans[questionIndex].answer.forEach((item,i) => {
+    questions[questionIndex].options.forEach((item,i) => {
+        console.log(item)
         const label = document.getElementById(`label${i+1}`);
         const radio = document.getElementById(`radio${i+1}`);
         radio.checked = false;
         radio.onclick = () => {
-            // console.log(radio.value)
             checkResult(radio.value,questionIndex)
         }
-        label.innerText=item.option;
-        radio.value = item.option;
-    } )
+        label.innerText=item;
+        radio.value = item;
+    })
     // console.log(radioInput + '*')
 }
 
