@@ -78,6 +78,7 @@ button:hover {
     width: 40%;
     padding: 15px;
     overflow-wrap: break-word;
+    border-radius:10px;
 }
 
 #backBtn{

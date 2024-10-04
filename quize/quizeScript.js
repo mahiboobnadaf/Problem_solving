@@ -23,6 +23,7 @@ let questions =[
 }
 ]
 let questionIndex = 0;
+let gotAnswer={}
 
 let questionBox = document.getElementById("questionBox")
 // let questionText = questionBox.innerText
@@ -31,63 +32,83 @@ questionBox.innerText = '';
 function displayQuestion(ind){
     const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
     questionBox.innerText = currentQuestion;
-    var radioInput;
 
     questions[questionIndex].options.forEach((item,i) => {
-        console.log(item)
+        // console.log(item)
         const label = document.getElementById(`label${i+1}`);
         const radio = document.getElementById(`radio${i+1}`);
         radio.checked = false;
         radio.onclick = () => {
-            checkResult(radio.value,questionIndex)
+            storeResult(radio.value,questionIndex)
         }
         label.innerText=item;
         radio.value = item;
     })
     // console.log(radioInput + '*')
     nextBtn.onclick=()=>{
-        loadNextQuestion()
+        // console.log(questionIndex+1 + "indx")
+        loadNextQuestion(questionIndex+1);
     }
 }
 
-function checkResult(btnInput,questionIdx){
-    let score = 0;
-    gotAnswer = {[btnInput] : questionIdx}
-    actualAnswer = questions[questionIdx].answer
-    if(btnInput == actualAnswer){
-        console.log(btnInput)
-        score++;
+function loadNextQuestion(questionIndex){
+    let currentIndex = questionIndex;
+    document.getElementById("nextBtn").innerText = "Next";
+
+    if(questionIndex == questions.length-1){
+        document.getElementById("nextBtn").innerText = "Submit";
+
     }
+    if(questionIndex != questions.length){
+        // console.log(gotAnswer)
+        const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
+        questionBox.innerText = currentQuestion;
+        document.getElementById("backBtn").disabled = false;
+
+        questions[questionIndex].options.forEach((item,i) => {
+            // console.log(item)
+            const label = document.getElementById(`label${i+1}`);
+            const radio = document.getElementById(`radio${i+1}`);
+            radio.checked = false;
+            radio.onclick = () => {
+                storeResult(radio.value,questionIndex)
+            }
+            label.innerText=item;
+            radio.value = item;
+        })
+
+        nextBtn.onclick=()=>{
+            // console.log(questionIndex+1 +" " +"indx")
+            loadNextQuestion(questionIndex+1);
+        }
+
+        backBtn.onclick=()=>{
+            loadNextQuestion(questionIndex-1);
+        }
+    }
+    
+    else{
+       calculateResult();
+        // alert("Game Over")
+    }
+}
+
+function calculateResult(){
     console.log(gotAnswer)
+
 }
 
+function storeResult(btnInput,questionIdx){
+    let score = 0;
+    gotAnswer = { [questionIdx] : btnInput }
+    // calculateResult(gotAnswer)
+    // actualAnswer = questions[questionIdx].answer
+    // if(btnInput == actualAnswer){
+    //     // console.log(btnInput)
+    //     score++;
+    // }
+    // console.log(gotAnswer)
+}
+console.log(gotAnswer)
 
 window.onload = displayQuestion(questionIndex)
-
-
-        
-    
-    // inp = prompt("Enter your option Number : ")
-    // if(inp >=1 && inp <=4 ){
-    //     userInput.push(inp)  
-    // }
-    // else{
-    //     console.log("wrong input : Terminated") 
-    //     break
-    // }
-
-
-let userInput=[];
-let correctAns = [];
-let score =0;
-
-// // console.log(userInput)
-
-// for(i=0;i<que_ans.length;i++){
-//     correctAns.push(que_ans[i].answer.findIndex(ans => ans.content == true)+1)
-//     if(userInput[i] == correctAns[i]){
-//         // console.log(correctAns)
-//         score +=1;
-//     }
-// }
-// console.log(`Your score is ${score} out of 4`)
