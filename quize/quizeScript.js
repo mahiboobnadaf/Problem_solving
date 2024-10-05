@@ -94,13 +94,25 @@ function loadNextQuestion(questionIndex){
 }
 
 function calculateResult(){
-    console.log(gotAnswer)
+    let score=0;
+    
+        for(i=0;i<Object.keys(gotAnswer).length;i++){
+            if(gotAnswer[i] == questions[i].answer){
+                console.log(gotAnswer[i] +" : "+ questions[i].answer + " "+ "Matched")
+                score++;
+            }
+            else{
+                console.log(gotAnswer[i] +" : "+ questions[i].answer +" "+ "Not matched")
+            }
+        }
+        alert(`Your score is ${score} out of ${questions.length}`)
+ 
 
 }
 
 function storeResult(btnInput,questionIdx){
     let score = 0;
-    gotAnswer = { [questionIdx] : btnInput }
+    gotAnswer[questionIdx] = btnInput;
     // calculateResult(gotAnswer)
     // actualAnswer = questions[questionIdx].answer
     // if(btnInput == actualAnswer){
