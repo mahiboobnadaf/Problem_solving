@@ -1,4 +1,4 @@
-// const prompt = require('prompt-sync')(); 
+
 let questions =[
     {
     question : "What is your Year of Birth ?",
@@ -43,13 +43,14 @@ function displayQuestion(ind){
         label.innerText=item;
         radio.value = item;
     })
+
     nextBtn.onclick=()=>{
         loadNextQuestion(questionIndex+1);
     }
 }
 
 function loadNextQuestion(questionIndex){
-    let currentIndex = questionIndex;
+    
     document.getElementById("nextBtn").innerText = "Next";
 
     if(questionIndex == questions.length-1){
@@ -60,6 +61,7 @@ function loadNextQuestion(questionIndex){
         const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
         questionBox.innerText = currentQuestion;
         document.getElementById("backBtn").disabled = false;
+        document.getElementById("backBtn").classList.add('pointer');
 
         questions[questionIndex].options.forEach((item,i) => {
             const label = document.getElementById(`label${i+1}`);
@@ -100,8 +102,6 @@ function calculateResult(){
         }
         alert(`Your score is ${score} out of ${questions.length}`)
         window.onload = displayQuestion(0)
- 
-
 }
 
 function storeResult(btnInput,questionIdx){
