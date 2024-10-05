@@ -22,19 +22,18 @@ let questions =[
     answer: "Hyderabad"    
 }
 ]
+
 let questionIndex = 0;
 let gotAnswer={}
 
-let questionBox = document.getElementById("questionBox")
-// let questionText = questionBox.innerText
+let questionBox = document.getElementById("questionBox");
 questionBox.innerText = '';
 
 function displayQuestion(ind){
-    const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
+    const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question;
     questionBox.innerText = currentQuestion;
 
     questions[questionIndex].options.forEach((item,i) => {
-        // console.log(item)
         const label = document.getElementById(`label${i+1}`);
         const radio = document.getElementById(`radio${i+1}`);
         radio.checked = false;
@@ -44,9 +43,7 @@ function displayQuestion(ind){
         label.innerText=item;
         radio.value = item;
     })
-    // console.log(radioInput + '*')
     nextBtn.onclick=()=>{
-        // console.log(questionIndex+1 + "indx")
         loadNextQuestion(questionIndex+1);
     }
 }
@@ -60,13 +57,11 @@ function loadNextQuestion(questionIndex){
 
     }
     if(questionIndex != questions.length){
-        // console.log(gotAnswer)
         const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
         questionBox.innerText = currentQuestion;
         document.getElementById("backBtn").disabled = false;
 
         questions[questionIndex].options.forEach((item,i) => {
-            // console.log(item)
             const label = document.getElementById(`label${i+1}`);
             const radio = document.getElementById(`radio${i+1}`);
             radio.checked = false;
@@ -78,7 +73,6 @@ function loadNextQuestion(questionIndex){
         })
 
         nextBtn.onclick=()=>{
-            // console.log(questionIndex+1 +" " +"indx")
             loadNextQuestion(questionIndex+1);
         }
 
@@ -89,7 +83,6 @@ function loadNextQuestion(questionIndex){
     
     else{
        calculateResult();
-        // alert("Game Over")
     }
 }
 
@@ -112,16 +105,7 @@ function calculateResult(){
 }
 
 function storeResult(btnInput,questionIdx){
-    let score = 0;
     gotAnswer[questionIdx] = btnInput;
-    // calculateResult(gotAnswer)
-    // actualAnswer = questions[questionIdx].answer
-    // if(btnInput == actualAnswer){
-    //     // console.log(btnInput)
-    //     score++;
-    // }
-    // console.log(gotAnswer)
 }
-console.log(gotAnswer)
 
 window.onload = displayQuestion(questionIndex)
