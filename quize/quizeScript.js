@@ -106,6 +106,7 @@ function calculateResult(){
             }
         }
         alert(`Your score is ${score} out of ${questions.length}`)
+        window.onload = displayQuestion(0)
  
 
 }
