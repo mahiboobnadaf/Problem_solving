@@ -33,19 +33,28 @@ function displayQuestion(ind){
     const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question;
     questionBox.innerText = currentQuestion;
 
+    let checked = false;
+
     questions[questionIndex].options.forEach((item,i) => {
         const label = document.getElementById(`label${i+1}`);
         const radio = document.getElementById(`radio${i+1}`);
-        radio.checked = false;
         radio.onclick = () => {
+            checked = true;
+            console.log(radio)
             storeResult(radio.value,questionIndex)
+            
         }
         label.innerText=item;
         radio.value = item;
     })
 
-    nextBtn.onclick=()=>{
-        loadNextQuestion(questionIndex+1);
+    nextBtn.onclick=(radio)=>{
+        if(checked){
+            loadNextQuestion(questionIndex+1);
+        }
+        else{
+            alert("Select answer before clicking next")
+        }
     }
 }
 
@@ -61,7 +70,7 @@ function loadNextQuestion(questionIndex){
         const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
         questionBox.innerText = currentQuestion;
         document.getElementById("backBtn").disabled = false;
-        document.getElementById("backBtn").classList.add('pointer');
+        document.getElementById("backBtn").classList.replace('not-allowed','pointer');
 
         questions[questionIndex].options.forEach((item,i) => {
             const label = document.getElementById(`label${i+1}`);
