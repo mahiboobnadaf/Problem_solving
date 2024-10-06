@@ -66,9 +66,7 @@ function displayQuestion(ind){
 }
 
 function loadNextQuestion(questionIndex){
-    // currentQuestion = questionIndex;
     if(questionIndex == 0){
-        // console.log(questionIndex+" aa")
         document.getElementById("backBtn").disabled = true;
         document.getElementById("backBtn").classList.add('not-allowed');
     }
