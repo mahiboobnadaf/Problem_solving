@@ -29,15 +29,22 @@ let gotAnswer={}
 let questionBox = document.getElementById("questionBox");
 questionBox.innerText = '';
 
+
+
 function displayQuestion(ind){
+    questionIndex = ind;
     const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question;
     questionBox.innerText = currentQuestion;
 
     let checked = false;
+    
+    document.getElementById("backBtn").disabled = true;
+    document.getElementById("backBtn").classList.add('not-allowed');
 
     questions[questionIndex].options.forEach((item,i) => {
         const label = document.getElementById(`label${i+1}`);
         const radio = document.getElementById(`radio${i+1}`);
+        radio.checked = false;
         radio.onclick = () => {
             checked = true;
             console.log(radio)
@@ -59,18 +66,28 @@ function displayQuestion(ind){
 }
 
 function loadNextQuestion(questionIndex){
-    
-    document.getElementById("nextBtn").innerText = "Next";
+    // currentQuestion = questionIndex;
+    if(questionIndex == 0){
+        // console.log(questionIndex+" aa")
+        document.getElementById("backBtn").disabled = true;
+        document.getElementById("backBtn").classList.add('not-allowed');
+    }
+    else{
+        document.getElementById("backBtn").disabled = false;
+        document.getElementById("backBtn").classList.replace('not-allowed','pointer');
+    }
+
 
     if(questionIndex == questions.length-1){
         document.getElementById("nextBtn").innerText = "Submit";
-
     }
+    else{
+        document.getElementById("nextBtn").innerText = "Next";
+    }
+
     if(questionIndex != questions.length){
         const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question
         questionBox.innerText = currentQuestion;
-        document.getElementById("backBtn").disabled = false;
-        document.getElementById("backBtn").classList.replace('not-allowed','pointer');
 
         questions[questionIndex].options.forEach((item,i) => {
             const label = document.getElementById(`label${i+1}`);
@@ -88,8 +105,8 @@ function loadNextQuestion(questionIndex){
         }
 
         backBtn.onclick=()=>{
-            loadNextQuestion(questionIndex-1);
-        }
+                loadNextQuestion(questionIndex-1);
+            }
     }
     
     else{
@@ -110,7 +127,8 @@ function calculateResult(){
             }
         }
         alert(`Your score is ${score} out of ${questions.length}`)
-        window.onload = displayQuestion(0)
+        // radio.checked = false;
+        window.onload = displayQuestion(0,false)
 }
 
 function storeResult(btnInput,questionIdx){
