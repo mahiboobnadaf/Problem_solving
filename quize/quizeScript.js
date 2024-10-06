@@ -30,13 +30,14 @@ let questionBox = document.getElementById("questionBox");
 questionBox.innerText = '';
 
 
-
 function displayQuestion(ind){
     questionIndex = ind;
     const currentQuestion = questionIndex+1 + '. ' + questions[questionIndex].question;
     questionBox.innerText = currentQuestion;
 
     let checked = false;
+
+   
     
     document.getElementById("backBtn").disabled = true;
     document.getElementById("backBtn").classList.add('not-allowed');
@@ -55,7 +56,7 @@ function displayQuestion(ind){
         radio.value = item;
     })
 
-    nextBtn.onclick=(radio)=>{
+    nextBtn.onclick=()=>{
         if(checked){
             loadNextQuestion(questionIndex+1);
         }
@@ -66,6 +67,7 @@ function displayQuestion(ind){
 }
 
 function loadNextQuestion(questionIndex){
+    let checked = false;
     if(questionIndex == 0){
         document.getElementById("backBtn").disabled = true;
         document.getElementById("backBtn").classList.add('not-allowed');
@@ -92,6 +94,7 @@ function loadNextQuestion(questionIndex){
             const radio = document.getElementById(`radio${i+1}`);
             radio.checked = false;
             radio.onclick = () => {
+                checked = true;
                 storeResult(radio.value,questionIndex)
             }
             label.innerText=item;
@@ -99,7 +102,12 @@ function loadNextQuestion(questionIndex){
         })
 
         nextBtn.onclick=()=>{
-            loadNextQuestion(questionIndex+1);
+            if(checked){
+                loadNextQuestion(questionIndex+1);
+            }
+            else{
+                alert("gggg")
+            }
         }
 
         backBtn.onclick=()=>{
