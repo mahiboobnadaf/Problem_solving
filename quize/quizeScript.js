@@ -61,7 +61,7 @@ function displayQuestion(ind){
             loadNextQuestion(questionIndex+1);
         }
         else{
-            alert("Select answer before clicking next")
+            alert("Select an option")
         }
     }
 }
@@ -106,7 +106,7 @@ function loadNextQuestion(questionIndex){
                 loadNextQuestion(questionIndex+1);
             }
             else{
-                alert("gggg")
+                alert("Select an option")
             }
         }
 
