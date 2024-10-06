@@ -1,26 +1,50 @@
 
 let questions =[
     {
-    question : "What is your Year of Birth ?",
-    options: [2000,1998,2001,1990],
-    answer:2000 
-},
-
-{
-    question : "What is your College Name ?",
-    options :["Jain", "BVB","KLE","Reva",],
-    answer: "BVB"
-},
-{
-    question : "What is your Percentage ?",
-    options: [80,70,60,90,],
-    answer: 70
-},
-{
-    question : "What is your Home Town ?",
-    options:["Hubli","Savdatti","Bagalkot","Hyderabad"],
-    answer: "Hyderabad"    
-}
+        question: "Which of the following is not a JavaScript framework or library?",
+        options: ["React", "Vue", "Django", "Angular"],
+        answer: "Django"
+      },
+      {
+        question: "What will be the output of the following code? \n\n console.log(typeof null);",
+        options: ["'object'", "'null'", "'undefined'", "'string'"],
+        answer: "'object'"
+      },
+      {
+        question: "Which method is used to remove the last element from an array in JavaScript?",
+        options: ["shift()", "pop()", "push()", "unshift()"],
+        answer: "pop()"
+      },
+      {
+        question: "What is the output of the following code? \n\n console.log(2 + '2');",
+        options: ["4", "'22'", "NaN", "undefined"],
+        answer: "'22'"
+      },
+      {
+        question: "Which of the following is used to define a variable in JavaScript that cannot be reassigned?",
+        options: ["var", "const", "let", "function"],
+        answer: "const"
+      },
+      {
+        question: "What will console.log([] == false) return?",
+        options: ["true", "false", "TypeError", "undefined"],
+        answer: "true"
+      },
+      {
+        question: "How do you check if a property exists in an object in JavaScript?",
+        options: ["object.hasOwnProperty(property)", "property in object", "object.includes(property)", "Both a and b"],
+        answer: "Both a and b"
+      },
+      {
+        question: "What is the purpose of Array.prototype.map() method in JavaScript?",
+        options: [
+          "To filter elements from an array",
+          "To create a new array with results of calling a function on every element in the array",
+          "To add an element to the array",
+          "To find the index of an element"
+        ],
+        answer: "To create a new array with results of calling a function on every element in the array"
+      }
 ]
 
 let questionIndex = 0;
